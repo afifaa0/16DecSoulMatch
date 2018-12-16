@@ -1,0 +1,125 @@
+﻿@model IEnumerable<Soul.Models.broker>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<head>
+    <link rel="stylesheet" type="text/css" media="screen and (max-height: 450px)" />
+    <link rel="stylesheet" type="text/css" media="screen and (max-height: 450px)" />
+    <style>
+        body {
+            font-family: "Lato", sans-serif;
+        }
+
+        .sidenav {
+            height: 100%;
+            width: 200px;
+            position: fixed;
+            z-index: 1;
+            top: 0;
+            left: 0;
+            background-color: #111;
+            overflow-x: hidden;
+            padding-top: 60px;
+        }
+
+            .sidenav a {
+                padding: 6px 6px 6px 32px;
+                text-decoration: none;
+                font-size: 25px;
+                color: #818181;
+                display: block;
+            }
+
+                .sidenav a:hover {
+                    color: #f1f1f1;
+                }
+
+
+        .main {
+            margin-left: 200px; /* Same as the width of the sidenav */
+        }
+    </style>
+
+
+</head>
+<body>
+    <div class="sidenav">
+
+        <a href="http://localhost:50741/Admin/Main">Admin Profile</a>
+        <br />
+
+        <a href="http://localhost:50741/Broker/Create">Register Broker</a>
+        <br />
+        <a href="http://localhost:50741/Broker/requests">Manage Broker</a>
+        <br />
+        <a href="http://localhost:50741/Admin/Login">Log Out</a>
+    </div>
+    <br />
+    <br />
+    <center><h2 class="color-white">Manage Brokers!</h2></center>
+
+
+    <p>
+        @Html.ActionLink("Create New", "Create")
+    </p>
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CNIC)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.City)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Contact_No)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Email)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Code)
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CNIC)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.City)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Contact_No)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Email)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Code)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", "Broker", new { id = item.Id }, null) |
+                    @Html.ActionLink("Details", "Details", "Broker", new { id=item.Id  }, null) |
+                    @Html.ActionLink("Delete", "Delete", "Broker", new { id = item.Id }, null)
+                </td>
+            </tr>
+        }
+
+
+
+    </table>
+    <br />
+    <br />
+    <br />
+    <br />

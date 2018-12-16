@@ -1,0 +1,71 @@
+﻿@model Soul.Models.AdminViewModel
+
+@{
+    ViewBag.Title = "Main";
+}
+<head>
+    <link rel="stylesheet" type="text/css" media="screen and (max-height: 450px)" />
+    <link rel="stylesheet" type="text/css" media="screen and (max-height: 450px)" />
+    <style>
+        body {
+            font-family: "Lato", sans-serif;
+        }
+
+        .sidenav {
+            height: 100%;
+            width: 200px;
+            position: fixed;
+            z-index: 1;
+            top: 0;
+            left: 0;
+            background-color: #111;
+            overflow-x: hidden;
+            padding-top: 60px;
+        }
+
+            .sidenav a {
+                padding: 6px 6px 6px 32px;
+                text-decoration: none;
+                font-size: 25px;
+                color: #818181;
+                display: block;
+            }
+
+                .sidenav a:hover {
+                    color: #f1f1f1;
+                }
+
+
+        .main {
+            margin-left: 200px; /* Same as the width of the sidenav */
+        }
+    </style>
+
+
+</head>
+<body>
+    <div class="sidenav">
+
+        <a href="http://localhost:50741/Admin/Main">Admin Profile</a>
+        <br />
+        <a href="http://localhost:50741/Broker/Create">Register Broker</a>
+        <br />
+        <a href="http://localhost:50741/Admin/Index">Manage Broker</a>
+        <br />
+        <a href="http://localhost:50741/Admin/Login">Log Out</a>
+    </div>
+    <br />
+    <br />
+    <center><h2 class="color-white">WELCOME ADMIN!</h2></center>
+    <br />
+    <br />
+    <br />
+    <center>
+        @Html.ActionLink("Registeration of Broker", "Create", "Broker", new { }, "Id,Name,CNIC,City,Contact_No,Email,BrokerID,Code")
+    </center>
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+</body>

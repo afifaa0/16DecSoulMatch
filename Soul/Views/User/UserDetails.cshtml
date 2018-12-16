@@ -1,0 +1,168 @@
+﻿@model Soul.Models.registered_users
+
+@{
+    ViewBag.Title = "UserDetails";
+}
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <link rel="stylesheet" type="text/css" media="screen and (max-height: 450px)" />
+    <link rel="stylesheet" type="text/css" media="screen and (max-height: 450px)" />
+    <style>
+        body {
+            font-family: "Lato", sans-serif;
+        }
+
+        .sidenav {
+            height: 100%;
+            width: 200px;
+            position: fixed;
+            z-index: 1;
+            top: 0;
+            left: 0;
+            background-color: #111;
+            overflow-x: hidden;
+            padding-top: 60px;
+        }
+
+            .sidenav a {
+                padding: 6px 6px 6px 32px;
+                text-decoration: none;
+                font-size: 25px;
+                color: #818181;
+                display: block;
+            }
+
+                .sidenav a:hover {
+                    color: #f1f1f1;
+                }
+
+
+        .main {
+            margin-left: 200px; /* Same as the width of the sidenav */
+        }
+    </style>
+
+
+</head>
+<body>
+    <div class="sidenav">
+
+        <a href="http://localhost:50741/User/UserProfile">User Profile</a>
+        <a href="http://localhost:50741/User/Searchuser">Search Users</a>
+        <a href="http://localhost:50741/User/getnotified">Proposal Requests</a>
+        <a href="http://localhost:50741/User/Login">Log Out</a>
+    </div>
+
+    <div class="main">
+        <h2>UserDetails</h2>
+
+        <div>
+            <dl class="dl-horizontal">
+               
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.Image)
+                </dt>
+
+                <dd>
+
+                    <img src="@Html.ViewData["Img"]" height="200" width="150" />
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.Fullname)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Fullname)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.Username)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Username)
+                </dd>
+
+              
+                <dt>
+                    @Html.DisplayNameFor(model => model.Age)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Age)
+                </dd>
+
+              
+
+         
+
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.Email)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Email)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.Salary)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Salary)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.Gender)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Gender)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.Religion)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Religion)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.Cast)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Cast)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.Profession)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Profession)
+                </dd>
+
+              
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.City)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.City)
+                </dd>
+
+            </dl>
+        </div>
+        <p>
+
+            @Html.ActionLink("Back to List", "getnotified")
+        </p>
+        </div></body></html>

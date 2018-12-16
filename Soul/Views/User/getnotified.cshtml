@@ -1,0 +1,104 @@
+﻿@model IEnumerable<Soul.Models.request>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <link rel="stylesheet" type="text/css" media="screen and (max-height: 450px)" />
+    <link rel="stylesheet" type="text/css" media="screen and (max-height: 450px)" />
+    <style>
+        body {
+            font-family: "Lato", sans-serif;
+        }
+
+        .sidenav {
+            height: 100%;
+            width: 200px;
+            position: fixed;
+            z-index: 1;
+            top: 0;
+            left: 0;
+            background-color: #111;
+            overflow-x: hidden;
+            padding-top: 60px;
+        }
+
+            .sidenav a {
+                padding: 6px 6px 6px 32px;
+                text-decoration: none;
+                font-size: 25px;
+                color: #818181;
+                display: block;
+            }
+
+                .sidenav a:hover {
+                    color: #f1f1f1;
+                }
+
+
+        .main {
+            margin-left: 200px; /* Same as the width of the sidenav */
+        }
+    </style>
+
+
+</head>
+<body>
+    <div class="sidenav">
+
+        <a href="http://localhost:50741/User/UserProfile">User Profile</a>
+        <a href="http://localhost:50741/User/Searchuser">Search Users</a>
+        <a href="http://localhost:50741/User/getnotified">Proposal Requests</a>
+        <a href="http://localhost:50741/User/Login">Log Out</a>
+    </div>
+
+
+
+    <div class="main">
+        <br />
+        <br />
+        <center><h2 class="color-white">NOTIFICATIONS</h2></center>
+        <br />
+        <br />
+        <br />
+        <br />
+        <table class="table">
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.sender)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.receiver)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.status)
+                </th>
+                <th></th>
+            </tr>
+
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.sender)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.receiver)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.status)
+                    </td>
+                    <td>
+                        @Html.ActionLink("Pay", "Pay", new { id = item.ID }) |
+                        @Html.ActionLink("UserDetails", "UserDetails", new { id = item.ID }) |
+                        @Html.ActionLink("UserDelete", "UserDelete", new { id = item.ID })
+                    </td>
+                </tr>
+            }
+
+        </table>
+        <br />
+        <br />
+        <br>
+    </div>
+</body>
+</html>

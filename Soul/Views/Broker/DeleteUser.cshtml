@@ -1,0 +1,76 @@
+﻿﻿@model Soul.Models.user
+<head>
+    <link rel="stylesheet" type="text/css" media="screen and (max-height: 450px)" />
+    <link rel="stylesheet" type="text/css" media="screen and (max-height: 450px)" />
+    <style>
+        body {
+            font-family: "Lato", sans-serif;
+        }
+
+        .sidenav {
+            height: 100%;
+            width: 200px;
+            position: fixed;
+            z-index: 1;
+            top: 0;
+            left: 0;
+            background-color: #111;
+            overflow-x: hidden;
+            padding-top: 60px;
+        }
+
+            .sidenav a {
+                padding: 6px 6px 6px 32px;
+                text-decoration: none;
+                font-size: 25px;
+                color: #818181;
+                display: block;
+            }
+
+                .sidenav a:hover {
+                    color: #f1f1f1;
+                }
+
+
+        .main {
+            margin-left: 200px; /* Same as the width of the sidenav */
+        }
+    </style>
+
+
+</head>
+<body>
+    <div class="sidenav">
+
+        <a href="http://localhost:50741/Broker/UserProfile">Broker Profile</a>
+        <br />
+        <br />
+        <a href="http://localhost:50741/Broker/requests">Registration Requests</a>
+        <br />
+        <br />
+        <a href="http://localhost:50741/Broker/ViewProgress">View Progress</a>
+        <br />
+        <br />
+        <a href="http://localhost:50741/Broker/Login">Log Out</a>
+    </div>
+    <br />
+    <br />
+    <div>
+        <center>
+            <h3 class="color-white">Are you sure you want to delete this?</h3>
+
+            <div>
+
+
+
+                @using (Html.BeginForm())
+                {
+                    @Html.AntiForgeryToken()
+
+                    <div class="form-actions no-color">
+                        <input type="submit" value="Delete" class="btn btn-default" /> |
+
+                    </div>
+                }
+        </center>
+        </div>
