@@ -1,4 +1,10 @@
-﻿@model IEnumerable<Soul.Models.gridtable>
+﻿@model IEnumerable<Soul.Models.request>
+
+
+
+<!DOCTYPE html>
+
+<html>
 <head>
     <link rel="stylesheet" type="text/css" media="screen and (max-height: 450px)" />
     <link rel="stylesheet" type="text/css" media="screen and (max-height: 450px)" />
@@ -60,34 +66,43 @@
     <br />
     @using GridMvc.Html
     @{
-        ViewBag.Title = "REG REQUESTS";
+        ViewBag.Title = "View Progress";
     }
-    <center> <h2 class="color-white">REGISTRATION REQUESTS</h2></center>
+    <center> <h2 class="color-white">View Progress</h2></center>
     <link href="@Url.Content("~/Content/Gridmvc.css")" rel="stylesheet" />
     <link href="@Url.Content("~/Content/bootstrap.min.css")" rel="stylesheet" />
     <script src="@Url.Content("~/scripts/jquery-1.10.2.min.js")"></script>
     <script src="@Url.Content("~/scripts/gridmvc.min.js")"></script>
 
-    <div class="code-cut">
-        @Html.Grid(Model).Columns(Columns =>
-    {
-        Columns.Add(c => c.Username).Titled("UserName");
-        Columns.Add(c => c.Adress).Titled("Adress");
-        Columns.Add(c => c.Age).Titled("Age");
-        Columns.Add()
-        .Encoded(false)
-        .Sanitized(false)
-        .SetWidth(30)
-        .RenderValueAs(o =>( Html.ActionLink(" Details", "DetailsUser", new { id = o.UserID }, new { @class = "btn btn-default" }).ToHtmlString()) + Html.ActionLink("Allow", "Allow", new { id = o.UserID }, new { @class = "btn btn-default" }).ToHtmlString() + Html.ActionLink("Delete", "DeleteUser", new { id = o.UserID }, new { @class = "btn btn-default" }).ToHtmlString());
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.sender)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.receiver)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.status)
+            </th>
+            <th></th>
+        </tr>
 
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.sender)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.receiver)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.status)
+                </td>
+            </tr>
+        }
 
-
-
-
-    }).WithPaging(10).Sortable(true)
-
-
-
-    </div>
-    </body>
-
+    </table>
+</body>
+</html>

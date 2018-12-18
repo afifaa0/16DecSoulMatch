@@ -205,6 +205,22 @@ namespace Soul.Controllers
             }
             return RedirectToAction("requests");
         }
+
+        public ActionResult ViewProgress()
+        {
+            return View(db.requests);
+        }
+        
+        public ActionResult PayBack()
+        {
+            return View(db.Rrequests);
+        }
+
+        public ActionResult Pay(int? id)
+        {
+            Rrequest user = db.Rrequests.Find(id);
+            return View(user);
+        }
         //*********************************************************************//
 
 

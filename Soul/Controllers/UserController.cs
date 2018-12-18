@@ -330,6 +330,16 @@ namespace Soul.Controllers
                 request d = db.requests.Find(id);
 
                 db.requests.Remove(d);
+
+                Rrequest dd = new Rrequest
+                {
+                    ID = d.ID,
+                    receiver = d.receiver,
+                    sender = d.sender,
+                    status = d.status
+                };
+
+                db.Rrequests.Add(dd);
                 db.SaveChanges();
             }
 

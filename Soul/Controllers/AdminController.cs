@@ -20,21 +20,42 @@ namespace Soul.Controllers
         [HttpGet]
         public ActionResult Login()
         {
-            AdminViewModel admin = new AdminViewModel();
-            return View(admin);
+            Admin adm = new Admin();
+            return View(adm);
 
         }
         [HttpPost]
-        public ActionResult Login(AdminViewModel admin)
+        public ActionResult Login(Admin adm)
         {
-            if (admin.Id.Equals(1234) && admin.Code.Equals("fass"))
+            try
             {
-                ViewBag.SuccessMessage = "Login Successful";
-                return RedirectToAction("Main", "Admin");
+                using (DbModels db = new DbModels())
+                {
+
+                    if (db.Admins.Any(x => x.Id == adm.Id && x.Code == adm.Code))
+                    {
+
+                        ViewBag.SuccessMessage = "Login Successful";
+                        return RedirectToAction("Main");
+
+                    }
+
+                    ViewBag.LoginErrorMessage = "Wrong Email and password";
+                }
 
             }
+            catch (DbEntityValidationException ex)
+            {
+                foreach (var entityValidationErrors in ex.EntityValidationErrors)
+                {
+                    foreach (var validationError in entityValidationErrors.ValidationErrors)
+                    {
+                        Response.Write("Property: " + validationError.PropertyName + " Error: " + validationError.ErrorMessage);
+                    }
+                }
+            }
 
-            return RedirectToAction("Main", "Admin");
+            return View("Login", adm);
         }
 
         public ActionResult Main()
