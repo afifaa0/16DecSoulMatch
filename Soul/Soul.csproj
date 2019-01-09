@@ -175,41 +175,41 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\Admin.cs">
-      <DependentUpon>DbModel.tt</DependentUpon>
+      <DependentUpon>DbModels.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\AdminViewModel.cs" />
     <Compile Include="Models\broker.cs">
-      <DependentUpon>DbModel.tt</DependentUpon>
+      <DependentUpon>DbModels.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Configuration.cs" />
-    <Compile Include="Models\DbModel.Context.cs">
+    <Compile Include="Models\DbModels.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>DbModel.Context.tt</DependentUpon>
+      <DependentUpon>DbModels.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\DbModel.cs">
+    <Compile Include="Models\DbModels.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>DbModel.tt</DependentUpon>
+      <DependentUpon>DbModels.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\DbModel.Designer.cs">
+    <Compile Include="Models\DbModels.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>DbModel.edmx</DependentUpon>
+      <DependentUpon>DbModels.edmx</DependentUpon>
     </Compile>
     <Compile Include="Models\gridtable.cs" />
     <Compile Include="Models\Logger.cs" />
     <Compile Include="Models\registered_users.cs">
-      <DependentUpon>DbModel.tt</DependentUpon>
+      <DependentUpon>DbModels.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\request.cs">
-      <DependentUpon>DbModel.tt</DependentUpon>
+      <DependentUpon>DbModels.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Rrequest.cs">
-      <DependentUpon>DbModel.tt</DependentUpon>
+      <DependentUpon>DbModels.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\user.cs">
-      <DependentUpon>DbModel.tt</DependentUpon>
+      <DependentUpon>DbModels.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -219,22 +219,23 @@
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\Gridmvc.css" />
+    <Content Include="Content\image.png" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\fontawesome-webfont.svg" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
     <Content Include="image.png" />
-    <Content Include="Models\DbModel.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>DbModel.edmx</DependentUpon>
-      <LastGenOutput>DbModel.Context.cs</LastGenOutput>
-    </Content>
     <Content Include="Models\DbModel.edmx.sql" />
-    <Content Include="Models\DbModel.tt">
+    <Content Include="Models\DbModels.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>DbModel.edmx</DependentUpon>
-      <LastGenOutput>DbModel.cs</LastGenOutput>
+      <DependentUpon>DbModels.edmx</DependentUpon>
+      <LastGenOutput>DbModels.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\DbModels.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>DbModels.edmx</DependentUpon>
+      <LastGenOutput>DbModels.cs</LastGenOutput>
     </Content>
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -247,12 +248,12 @@
     <Content Include="fonts\fontawesome-webfont.woff2" />
     <Content Include="fonts\FontAwesome.otf" />
     <Content Include="Grid.mvc.readme" />
-    <EntityDeploy Include="Models\DbModel.edmx">
+    <EntityDeploy Include="Models\DbModels.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>DbModel.Designer.cs</LastGenOutput>
+      <LastGenOutput>DbModels.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <Content Include="Models\DbModel.edmx.diagram">
-      <DependentUpon>DbModel.edmx</DependentUpon>
+    <Content Include="Models\DbModels.edmx.diagram">
+      <DependentUpon>DbModels.edmx</DependentUpon>
     </Content>
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\gridmvc.js" />

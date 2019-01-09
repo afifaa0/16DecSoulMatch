@@ -11,11 +11,14 @@ namespace Soul.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+
     public partial class Admin
     {
         public int AdminId { get; set; }
-        public int Id { get; set; }
+        public int? Id { get; set; }
+        [Required(AllowEmptyStrings = false, ErrorMessage = "This field is required")]
+        [DataType(DataType.Password)]
         public string Code { get; set; }
     }
 }

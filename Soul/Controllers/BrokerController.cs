@@ -128,6 +128,7 @@ namespace Soul.Controllers
             };
 
             db.registered_users.Add(rguser);
+            db.users.Remove(table_2);
             db.SaveChanges();
             return RedirectToAction("requests");
 
@@ -141,7 +142,7 @@ namespace Soul.Controllers
             {
                 return HttpNotFound();
             }
-            string CS = "Data Source=DESKTOP-CS6PHAG; Initial Catalog = mydatabase; Integrated Security=True";
+            string CS = "Data Source=HP\\SQLEXPRESS; Initial Catalog = mydatabase; Integrated Security=True";
             SqlConnection con = new SqlConnection(CS);
             SqlCommand cmd = new SqlCommand("SELECT Image FROM registered_users WHERE Email='" + u.Email + "'", con);
             con.Open();

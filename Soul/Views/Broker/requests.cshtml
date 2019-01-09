@@ -1,4 +1,8 @@
 ﻿@model IEnumerable<Soul.Models.gridtable>
+
+@{
+    ViewBag.Title = "Registeration Requests";
+}
 <head>
     <link rel="stylesheet" type="text/css" media="screen and (max-height: 450px)" />
     <link rel="stylesheet" type="text/css" media="screen and (max-height: 450px)" />
@@ -16,13 +20,13 @@
             left: 0;
             background-color: #111;
             overflow-x: hidden;
-            padding-top: 60px;
+            padding-top: 100px;
         }
 
             .sidenav a {
                 padding: 6px 6px 6px 32px;
                 text-decoration: none;
-                font-size: 25px;
+                font-size: 18px;
                 color: #818181;
                 display: block;
             }
@@ -42,19 +46,19 @@
 <body>
     <div class="sidenav">
 
-        <a href="http://localhost:50741/Broker/UserProfile">Broker Profile</a>
+        <a href="http://localhost:50741/Broker/UserProfile"><span class="glyphicon glyphicon-home"></span>Broker Profile</a>
         <br />
         <br />
-        <a href="http://localhost:50741/Broker/requests">Registration Requests</a>
+        <a href="http://localhost:50741/Broker/requests"><span class="glyphicon glyphicon-user"></span>Registration Requests</a>
         <br />
         <br />
-        <a href="http://localhost:50741/Broker/ViewProgress">View Progress</a>
+        <a href="http://localhost:50741/Broker/ViewProgress"><span class="glyphicon glyphicon-stats"></span>View Progress</a>
         <br />
         <br />
-        <a href="http://localhost:50741/Broker/PayBack">Pay Back</a>
+        <a href="http://localhost:50741/Broker/PayBack"><span class="glyphicon glyphicon-usd"></span>Pay Back</a>
         <br />
         <br />
-        <a href="http://localhost:50741/Broker/Login">Log Out</a>
+        <a href="http://localhost:50741/Broker/Login"><span class="glyphicon glyphicon-log-out"></span>Log Out</a>
     </div>
     <br />
     <br />
@@ -89,5 +93,5 @@
 
 
     </div>
-    </body>
+</body>
 
